@@ -1,9 +1,9 @@
-.PHONEY:cp
-.PHONEY:clean
+.PHONEY:cp clean
+
 SHELL = /bin/bash
 
 cp:
-	find . -name "*.txt" | xargs -I{} cp {} {}.bak
+	find . -name "*.txt" | xargs -p -I{} cp {} {}.bak
 
 clean:
-	rm *.sorted
+	rm *.bak
